@@ -1,15 +1,21 @@
 import React from 'react';
+import NotesContent from './NotesContent';
+import notes from '../notes';
+
+
+
+
+
 
 const Note = () => {
     return (
-        <div className='note'>
-            <h1>Title</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Rem reprehenderit voluptatum sit fugit
-                accusamus doloribus animi fuga minima,
-                facere officia deleniti
-                amet dignissimos error assumenda aspernatur nostrum debitis aliquam nemo.</p>
-        </div>
+        <div >
+           {notes.map((note)=> <NotesContent
+       key= {note.key}
+        title={note.title}
+        content={note.content}
+    />)}
+                    </div>
     );
 }
 
