@@ -1,22 +1,18 @@
 import React from 'react';
-import NotesContent from './NotesContent';
-import notes from '../notes';
 
+const Note = (props) => {
+  // Callback from the Note component to trigger a delete function.
+  function handleClick() {
+    props.onClicked(props.id);
+  }
 
-
-
-
-
-const Note = () => {
-    return (
-        <div >
-           {notes.map((note)=> <NotesContent
-       key= {note.key}
-        title={note.title}
-        content={note.content}
-    />)}
-                    </div>
-    );
-}
+  return (
+    <div className="note" onClick={handleClick}>
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
+      <button>Delete</button>
+    </div>
+  );
+};
 
 export default Note;
