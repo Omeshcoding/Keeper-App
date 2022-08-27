@@ -25,7 +25,7 @@ const App = () => {
     <div>
       <Header />
       {/* Take array and render seperate Note components for each item. */}
-      <CreateNote addItem={addNote} />
+      <CreateNote addNote={addNote} />
       {/* Pass a id over to the Note component, pass it back to the App when
       deleting. */}
       {notes.map((note, index) => (
